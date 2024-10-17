@@ -1,0 +1,39 @@
+#hero{
+    background-image: url(banner.png);
+    /* background-image: url(banner.jpg); */
+}
+#about{
+    display: flex;
+    align-items: center;
+}
+#about img{
+    width: 50%;
+    height: auto;
+}
+#about div{
+    padding-left: 40px;
+}
+#about-app{
+    text-align: center;
+}
+.video video{
+    width: 70%;
+    height: 100%;
+    margin: 30px auto 0 auto;
+}
+
+@media (max-width: 477px){
+    #about{
+        flex-direction: column;
+    }
+    #about img{
+        width: 99%;
+        margin-bottom: 20px;
+    }
+    #about div{
+        padding-left: 0px;
+    }
+    #about-app .video{
+        width: 100%;
+        }
+}

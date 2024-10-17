@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+body{
+    background-color: #ffffc7;
+}
+.header{
+    background: #2d2c2c;
+    color: #fff;
+    text-transform: uppercase;
+    word-spacing: 1vw;
+}
+.header h1{
+    font-size: 4vw;
+}
+.choices{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+}
+.choice{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(90, 86, 86);
+    width: 13.5vw;
+    height: 13.5vw;
+    border-radius: 50%;
+    transition: all .4s ease;
+}
+.choice:hover{
+    background: #000;
+    cursor: pointer;
+}
+.choice img{
+    border-radius: 50%;
+    object-fit: cover;
+    height: 12vw;
+    width: 12vw;
+}
+.scores{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    margin-top: 4rem;
+}
+.score h1{
+    line-height: 4vw;
+}
+.massage{
+    margin-top: 4rem;
+}
+.massage h1{
+    display: inline;
+    background-color: blueviolet;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+.massage h3{
+    margin-top: 1rem;
+    color: rgb(126, 4, 239);
+    font-weight: 600;
+}
+@media (max-width: 1000px) {
+    .header h1{
+        font-size: 8vw;
+    }
+    .score h1{
+        line-height: 12vw;
+    }
+    .massage h1{
+        font-size: 6vw;
+    }
+}

@@ -1,0 +1,105 @@
+#hero {
+  background-image: url(b1.jpg);
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 14px;
+}
+#hero h2,
+#hero p {
+  color: #fff;
+}
+#pagination {
+  text-align: center;
+}
+#pagination a {
+  text-decoration: none;
+  background-color: #088178;
+  padding: 15px 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+}
+#pagination a i {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Sproduct */
+#prodetails {
+  display: flex;
+}
+
+#prodetails .single-pro-img {
+  box-shadow: 20px 20px 30px rgb(0, 0, 0, 0.2);
+  width: 40%;
+  margin-right: 50px;
+  border-radius: 5px;
+}
+#prodetails .single-pro-img:hover {
+  box-shadow: 20px 20px 30px rgb(0, 0, 0, 0.6);
+}
+.small-img-group {
+  display: flex;
+  justify-content: space-between;
+}
+.small-img-color {
+  box-shadow: 20px 20px 30px rgb(0, 0, 0, 0.2);
+  flex-basis: 18%;
+  cursor: pointer;
+}
+.small-img-color:hover{
+    box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.3);
+}
+.single-pro-detail {
+  width: 50%;
+  padding-top: 30px;
+}
+.single-pro-detail h4 {
+  padding: 40px 0 20px 0;
+}
+.single-pro-detail h2 {
+  font-size: 26px;
+}
+.single-pro-detail select {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+.single-pro-detail input {
+  width: 50px;
+  height: 47px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.single-pro-detail input:focus {
+  outline: none;
+}
+.single-pro-detail button {
+  background-color: #088178;
+  color: #fff;
+}
+.single-pro-detail p {
+  line-height: 25px;
+}
+@media (max-width: 477px) {
+  #prodetails {
+    display: flex;
+    flex-direction: column;
+  }
+  #prodetails .single-pro-img {
+    width: 98%;
+    margin: 1%;
+    border-radius: 5px;
+  }
+  .single-pro-detail {
+    width: 98%;
+    padding-top: 30px;
+    margin: 5px;
+  }
+}

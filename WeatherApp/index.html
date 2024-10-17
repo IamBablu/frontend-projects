@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="search">
+        <input type="text" placeholder="Enter city name" spellcheck="false" />
+        <button><img src="images/search.png" /></button>
+      </div>
+      <div class="error">
+        <p>Invalid city name plz enter valid city name</p>
+      </div>
+      <div class="weather">
+        <img src="images/rain.png" class="Weather-icon" />
+        <h1 class="temp"></h1>
+        <h2 class="city"></h2>
+        <div class="details">
+          <div class="col">
+            <img src="images/humidity.png" />
+            <div>
+              <p class="humidity"></p>
+              <p>Humidity</p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="images/wind.png" />
+            <div>
+              <p class="Wind"></p>
+              <p>Wind speed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="creater"><b>Made By <ins><i>"Bablu".</i></ins></b></div>
+    <script>
+      const apikey = "267e281ea0165d959a5b57cc6c5f5c40";
+      // secondary apikey= "e0501855f7a777c2b30e8c27b6147e83";
+      const apiurl =
+        "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+      const searchBox = document.querySelector(".search input");
+      const searchBtn = document.querySelector(".search button");
+      const weatherIcon = document.querySelector(".Weather-icon");
+
+      async function checkWeather(city) {
+        const response = await fetch(apiurl + city + `&appid=${apikey}`);
+        var data = await response.json();
+        if (response.status == 404) {
+          document.querySelector(".error").classList.add("invalid");
+          document.querySelector(".weather").classList.add("hide");
+          console.log("hello");
+        } else {
+          document.querySelector(".city").innerHTML = data.name;
+          document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "&deg;c";
+          document.querySelector(".humidity").innerHTML = data.main.humidity + "&percnt;";
+          document.querySelector(".Wind").innerHTML = data.wind.speed + "km/h";
+
+          if (data.weather[0].main == "Clouds") {
+            weatherIcon.src = "images/clouds.png";
+          } else if (data.weather[0].main == "Clear") {
+            weatherIcon.src = "images/clear.png";
+          } else if (data.weather[0].main == "Rain") {
+            weatherIcon.src = "images/rain.png";
+          } else if (data.weather[0].main == "Drizzle") {
+            weatherIcon.src = "images/drizzle.png";
+          } else if (data.weather[0].main == "Mist") {
+            weatherIcon.src = "images/mist.png";
+          }
+
+          document.querySelector(".error").classList.remove("invalid");
+          document.querySelector(".weather").classList.remove("hide");
+          console.log("hii");
+        }
+      }
+      searchBtn.addEventListener("click", () => {
+        checkWeather(searchBox.value);
+      });
+      checkWeather("medininagar");
+    </script>
+  </body>
+</html>

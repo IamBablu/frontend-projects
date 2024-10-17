@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love You Baby</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+      body {
+        height: 100vh;
+        width: 100vw;
+        background: linear-gradient(rgb(45, 236, 7), rgb(9, 19, 217));        padding: 10vh 10vw;
+      }
+      .container,.last{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        width: 80vw;
+        height: 80vh;
+        position: relative;
+        border-radius: 20px;
+      }
+      h1{
+        text-align: center;
+      }
+      .hide{
+        display: none;
+      }
+      button{
+        color: white;
+        background-color: blueviolet;
+        padding: 5px 10px;
+        font-size: 20px;
+        border: none;
+        outline: none;
+        border-radius: 12px;
+        width: 60px;
+        cursor: pointer;
+      }
+      #no{
+        position: absolute;
+        top: 79%;
+        left: 54%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Do you want to date me</h1>
+        <img class="gif" src="https://i.pinimg.com/originals/eb/9a/eb/eb9aebefdde812358381a354899380ff.gif"alt=""/>
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+    <div class="last hide">
+        <h1>Yeey! Lets Fix the Date</h1>
+        <img class="gif" src="https://i.pinimg.com/originals/e9/70/26/e97026590dafc4500dc0c7c026ea2155.gif"alt=""/>
+
+    </div>
+    <script>
+        console.log("js")
+        let gif = document.getElementsByClassName("gif");
+            Array.from(gif).forEach((e)=>{
+            let element = e;
+            e = e.src;
+            setInterval(()=>{
+                e = e.substring(0,e.length-1);
+                e = e.concat("f");
+                element.src = e;
+            },3000)
+        })
+        function getposition(){
+            let number = Math.floor(Math.random()*100);
+            return number;
+        }
+        let no = document.getElementById("no");
+        no.addEventListener("click",()=>{
+            no.style.left = getposition() +"%";
+            no.style.top = getposition() +"%";
+        })
+        let yes = document.getElementById("yes");
+        yes.addEventListener("click",()=>{
+            console.log("yes")
+            document.getElementsByClassName("container")[0].classList.add("hide");
+            document.getElementsByClassName("last")[0].classList.remove("hide");
+        })
+    </script>
+  </body>
+</html>

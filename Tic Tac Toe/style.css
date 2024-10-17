@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: #ccc;
+    color: whitesmoke;
+    text-align: center;
+}
+.container{
+    width: 30vw;
+    margin: 10vh auto;
+    background-color: rgba(7, 18, 91, 0.831);
+    /* padding: 2%; */
+    border-radius: 5%;
+    /* height: 72vh; */
+    padding: 3vh 0;
+    position: relative;
+}
+.game{
+    padding:10px 15%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 2vh auto;
+}
+.game button{
+    background-color: #ffffc7;
+    color: #8b3232;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px rgba(0, 1, 9, 0.831);
+    border-radius: 15px;
+    /* padding: 15px; */
+    height: 7vw;
+    width: 7vw;
+    font-size: 34px;
+}
+.restart,.reset{
+    margin-top: 2vh;
+    padding: 8px 16px;
+    border-radius: 7px;
+    background-color: rgb(17, 62, 3);
+    color: #ccc;
+    font-size: 20px;
+    cursor: pointer;
+}
+#winner{
+    background: #ffffc7;
+    margin: 20px;
+    height: 53vh;
+    border-radius: 10%;
+    padding: 15vh 0;
+}
+#winneris{
+    color: black;
+}
+#creater{
+    color: rgb(21, 0, 255);
+    font-size: 24px;
+    position: absolute;
+    right: 15px;
+    bottom: -32px;
+}
+
+.hide{
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .container{
+        width: 80vw;
+    }   
+    .game button{
+        height: 18vw;
+        width: 18vw;
+    }
+    #winner{
+        height: 40vh;
+        padding: 5vh 0;
+    }
+}
